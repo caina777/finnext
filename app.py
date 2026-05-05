@@ -48,43 +48,6 @@ def salvar_lead(nome, empresa, telefone, faturamento, problema, score, resumo):
     conn.close()
 
 
-def gerar_resposta_ia(mensagem):
-    prompt_sistema = """
-    Você é o assistente comercial da Finnext.
-
-    A Finnext presta serviços de:
-    - Auditoria Financeira
-    - Auditoria de Processos
-    - BPO Financeiro
-
-    Seu objetivo:
-    - Conversar com donos, gestores e financeiros de pequenas e médias empresas.
-    - Identificar dores financeiras.
-    - Explicar de forma simples como a Finnext pode ajudar.
-    - Nunca prometer resultado garantido.
-    - Sempre tentar levar o lead para uma reunião de diagnóstico.
-
-    Tom:
-    - Profissional
-    - Direto
-    - Consultivo
-    - Sem linguagem robótica
-    - Sem parecer vendedor insistente
-
-    Quando fizer sentido, diga:
-    "Pelo que você comentou, faz sentido agendarmos um diagnóstico rápido para entender melhor o cenário."
-    """
-
-    resposta = client.responses.create(
-        model="gpt-5.5",
-        input=[
-            {"role": "system", "content": prompt_sistema},
-            {"role": "user", "content": mensagem}
-        ]
-    )
-
-    return resposta.output_text
-
 
 @app.route("/")
 def index():
