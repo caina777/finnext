@@ -93,16 +93,6 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/chat", methods=["POST"])
-def chat():
-    dados = request.json
-    mensagem = dados.get("mensagem")
-
-    resposta = gerar_resposta_ia(mensagem)
-
-    return jsonify({"resposta": resposta})
-
-
 @app.route("/lead", methods=["POST"])
 def lead():
     dados = request.json
