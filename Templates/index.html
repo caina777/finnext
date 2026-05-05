@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Finnext | Diagnóstico Financeiro</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="hero">
+    <nav class="navbar">
+        <div class="logo">Finnext<span>.</span></div>
+        <div class="nav-links">
+            <a href="#diagnostico">Diagnóstico</a>
+            <a href="#simulador">Simulador</a>
+            <a href="#servicos">Soluções</a>
+            <a href="#contato" class="nav-cta">Solicitar análise</a>
+        </div>
+    </nav>
+
+    <section class="hero-content">
+        <div class="eyebrow">Auditoria financeira • Processos • BPO</div>
+
+        <h1>Descubra se o seu financeiro está escondendo lucro.</h1>
+
+        <p>
+            A Finnext ajuda empresas a encontrar perdas invisíveis,
+            organizar processos e transformar números soltos em decisões claras.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#diagnostico" class="primary-btn">Fazer diagnóstico</a>
+            <a href="#simulador" class="secondary-btn">Testar simulador</a>
+        </div>
+
+        <div class="hero-mockup">
+            <div class="mockup-top">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="mockup-content">
+                <div>
+                    <small>Margem estimada</small>
+                    <strong id="mock-margin">18,4%</strong>
+                </div>
+                <div class="mock-line"></div>
+                <div class="mock-bars">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<section class="section dark">
+    <div class="section-title">
+        <span>O problema</span>
+        <h2>Você pode estar vendendo bem e ainda assim perdendo dinheiro.</h2>
+        <p>
+            O lucro some quando a empresa não tem processo, conferência,
+            previsibilidade e rotina financeira bem estruturada.
+        </p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Caixa sem clareza</h3>
+            <p>Faturamento entra, contas saem, mas ninguém sabe exatamente o resultado real.</p>
+        </div>
+
+        <div class="card">
+            <h3>Processos manuais</h3>
+            <p>Planilhas soltas, retrabalho, risco de erro e decisões baseadas em achismo.</p>
+        </div>
+
+        <div class="card">
+            <h3>Lucro invisível</h3>
+            <p>A empresa parece saudável, mas não existe visão gerencial confiável.</p>
+        </div>
+    </div>
+</section>
+
+<section class="diagnostico" id="diagnostico">
+    <div class="split">
+        <div>
+            <span class="mini-label">Diagnóstico guiado</span>
+            <h2>Responda 5 perguntas rápidas.</h2>
+            <p>
+                No final, você recebe uma leitura inicial do nível de risco financeiro/processual da empresa.
+            </p>
+        </div>
+
+        <div class="quiz-box">
+            <div class="progress">
+                <div id="progress-bar"></div>
+            </div>
+
+            <h3 id="question-title">Você lucra, mas não consegue enxergar o lucro final?</h3>
+
+            <div class="quiz-buttons">
+                <button onclick="responderQuiz(true)">Sim</button>
+                <button onclick="responderQuiz(false)">Não</button>
+            </div>
+
+            <p id="quiz-step">Pergunta 1 de 5</p>
+
+            <div id="quiz-result" class="hidden"></div>
+        </div>
+    </div>
+</section>
+
+<section class="simulador" id="simulador">
+    <div class="section-title">
+        <span>Simulador financeiro</span>
+        <h2>Brinque com os números e veja uma análise rápida.</h2>
+        <p>
+            Insira receita e despesas mensais para visualizar lucro, margem e alerta financeiro.
+        </p>
+    </div>
+
+    <div class="simulator-grid">
+        <div class="simulator-inputs">
+            <label>Receita mensal</label>
+            <input type="number" id="receita" placeholder="Ex: 80000" oninput="calcularFinanceiro()">
+
+            <label>Despesas mensais</label>
+            <input type="number" id="despesas" placeholder="Ex: 62000" oninput="calcularFinanceiro()">
+
+            <label>Custos variáveis / extras</label>
+            <input type="number" id="extras" placeholder="Ex: 5000" oninput="calcularFinanceiro()">
+        </div>
+
+        <div class="dashboard">
+            <div class="dash-card">
+                <small>Lucro estimado</small>
+                <strong id="lucro">R$ 0,00</strong>
+            </div>
+
+            <div class="dash-card">
+                <small>Margem</small>
+                <strong id="margem">0%</strong>
+            </div>
+
+            <div class="dash-card wide">
+                <small>Análise rápida</small>
+                <p id="analise">Preencha os campos para gerar uma leitura inicial.</p>
+            </div>
+
+            <div class="visual-bar">
+                <div id="bar-receita"></div>
+                <div id="bar-despesa"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="servicos">
+    <div class="section-title">
+        <span>Soluções Finnext</span>
+        <h2>Do diagnóstico à operação financeira.</h2>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Auditoria Financeira</h3>
+            <p>Mapeamento de perdas, inconsistências, riscos e oportunidades de melhoria.</p>
+        </div>
+
+        <div class="card featured">
+            <h3>BPO Financeiro</h3>
+            <p>Rotina financeira organizada: contas a pagar, receber, conciliação e relatórios.</p>
+        </div>
+
+        <div class="card">
+            <h3>Auditoria de Processos</h3>
+            <p>Revisão de fluxos, controles, responsabilidades e pontos críticos da operação.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contato">
+    <div class="contact-card">
+        <div>
+            <span class="mini-label">Próximo passo</span>
+            <h2>Solicite um diagnóstico da sua empresa.</h2>
+            <p>
+                Preencha os dados e a Finnext entra em contato para entender seu cenário.
+            </p>
+        </div>
+
+        <div class="lead-form">
+            <input id="nome" placeholder="Seu nome">
+            <input id="empresa" placeholder="Nome da empresa">
+            <input id="telefone" placeholder="WhatsApp">
+
+            <select id="faturamento">
+                <option value="ate_50k">Até R$ 50 mil/mês</option>
+                <option value="entre_50k_200k">R$ 50 mil a R$ 200 mil/mês</option>
+                <option value="acima_200k">Acima de R$ 200 mil/mês</option>
+                <option value="acima_500k">Acima de R$ 500 mil/mês</option>
+            </select>
+
+            <textarea id="problema" placeholder="Descreva brevemente o principal problema financeiro"></textarea>
+
+            <button onclick="salvarLead()">Solicitar diagnóstico</button>
+            <p id="resultado"></p>
+        </div>
+    </div>
+</section>
+
+<script>
+const perguntas = [
+    "Você lucra, mas não consegue enxergar o lucro final?",
+    "Seu caixa aperta mesmo quando o faturamento parece bom?",
+    "Sua empresa depende muito de planilhas manuais?",
+    "Já houve pagamento em atraso, duplicado ou sem conferência clara?",
+    "Você sente falta de relatórios confiáveis como DRE, fluxo de caixa e indicadores?"
+];
+
+let perguntaAtual = 0;
+let pontos = 0;
+
+function responderQuiz(resposta) {
+    if (resposta) pontos++;
+
+    perguntaAtual++;
+
+    const progresso = (perguntaAtual / perguntas.length) * 100;
+    document.getElementById("progress-bar").style.width = progresso + "%";
+
+    if (perguntaAtual < perguntas.length) {
+        document.getElementById("question-title").innerText = perguntas[perguntaAtual];
+        document.getElementById("quiz-step").innerText = `Pergunta ${perguntaAtual + 1} de 5`;
+    } else {
+        finalizarQuiz();
+    }
+}
+
+function finalizarQuiz() {
+    const resultado = document.getElementById("quiz-result");
+    const titulo = document.getElementById("question-title");
+    const botoes = document.querySelector(".quiz-buttons");
+    const step = document.getElementById("quiz-step");
+
+    botoes.style.display = "none";
+    step.style.display = "none";
+
+    let mensagem = "";
+
+    if (pontos <= 1) {
+        mensagem = "Seu financeiro parece ter uma base razoável, mas ainda pode existir oportunidade de melhoria em processos e indicadores.";
+    } else if (pontos <= 3) {
+        mensagem = "Seu cenário indica pontos de atenção. Pode haver perdas invisíveis, falta de previsibilidade e necessidade de estruturação.";
+    } else {
+        mensagem = "Seu cenário indica alto risco financeiro/processual. Faz muito sentido realizar um diagnóstico para encontrar gargalos e perdas.";
+    }
+
+    titulo.innerText = "Resultado do diagnóstico";
+    resultado.classList.remove("hidden");
+    resultado.innerHTML = `
+        <p>${mensagem}</p>
+        <a href="#contato">Solicitar diagnóstico completo</a>
+    `;
+
+    document.getElementById("problema").value = `Resultado do diagnóstico guiado: ${pontos} respostas SIM. ${mensagem}`;
+}
+
+function formatarMoeda(valor) {
+    return valor.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+}
+
+function calcularFinanceiro() {
+    const receita = Number(document.getElementById("receita").value) || 0;
+    const despesas = Number(document.getElementById("despesas").value) || 0;
+    const extras = Number(document.getElementById("extras").value) || 0;
+
+    const totalDespesas = despesas + extras;
+    const lucro = receita - totalDespesas;
+    const margem = receita > 0 ? (lucro / receita) * 100 : 0;
+
+    document.getElementById("lucro").innerText = formatarMoeda(lucro);
+    document.getElementById("margem").innerText = margem.toFixed(1) + "%";
+
+    let analise = "";
+
+    if (receita === 0) {
+        analise = "Preencha os campos para gerar uma leitura inicial.";
+    } else if (lucro < 0) {
+        analise = "A operação está no prejuízo. É importante revisar custos, despesas e processos financeiros com urgência.";
+    } else if (margem < 10) {
+        analise = "A margem está apertada. Pequenos erros de controle podem consumir boa parte do resultado.";
+    } else if (margem < 25) {
+        analise = "A empresa apresenta lucro, mas ainda precisa acompanhar indicadores para evitar perdas invisíveis.";
+    } else {
+        analise = "O resultado parece saudável. O próximo passo é estruturar relatórios e processos para manter previsibilidade.";
+    }
+
+    document.getElementById("analise").innerText = analise;
+
+    const receitaBar = receita > 0 ? 100 : 0;
+    const despesaBar = receita > 0 ? Math.min((totalDespesas / receita) * 100, 100) : 0;
+
+    document.getElementById("bar-receita").style.width = receitaBar + "%";
+    document.getElementById("bar-despesa").style.width = despesaBar + "%";
+}
+
+async function salvarLead() {
+    const lead = {
+        nome: document.getElementById("nome").value,
+        empresa: document.getElementById("empresa").value,
+        telefone: document.getElementById("telefone").value,
+        faturamento: document.getElementById("faturamento").value,
+        problema: document.getElementById("problema").value
+    };
+
+    const resposta = await fetch("/lead", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(lead)
+    });
+
+    const dados = await resposta.json();
+
+    document.getElementById("resultado").innerText =
+        `Diagnóstico solicitado com sucesso. Classificação: ${dados.score.toUpperCase()}`;
+}
+</script>
+
+</body>
+</html>
