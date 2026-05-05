@@ -4,8 +4,6 @@ import os
 
 app = Flask(__name__)
 
-cclient = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
 def criar_banco():
     conn = sqlite3.connect("leads.db")
     cursor = conn.cursor()
